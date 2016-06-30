@@ -4,7 +4,7 @@ ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20160324.tar.bz2
 VOLUME /usr/portage:rw", /usr/portage/distfiles:rw, /usr/portage/distfiles:rw
 
 # Supporting crossbuilding with binfmt
-ADD ext/qemu-aarch64-binfmt /usr/bin/qemu-aarch64-binfmt
+ADD ./qemu-aarch64-binfmt /usr/bin/qemu-aarch64-binfmt
 ADD ./qemu-arm64.conf-gen.sh
 RUN /bin/bash /qemu-arm64.conf-gen.sh
 RUN env-update
