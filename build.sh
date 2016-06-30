@@ -44,3 +44,31 @@ cd /
 # Say hello
 echo "Bootstrapped ${stage3path} into /:"
 ls --color -lah
+
+----working on. 
+# Supporting crossbuilding with binfmt
+ADD ./qemu-aarch64-binfmt /usr/bin/qemu-aarch64-binfmt
+ADD ./qemu-arm64.conf-gen.sh
+RUN /bin/bash /qemu-arm64.conf-gen.sh
+RUN env-update
+RUN source /etc/profile 
+# Setup the (virtually) current runlevel
+echo "default" > /run/openrc/softlevel
+
+# Setup the rc_sys
+RUN sed -e 's/#rc_sys=""/rc_sys="lxc"/g' -i /etc/rc.conf
+
+# Setup the net.lo runlevel
+RUN ln -s /etc/init.d/net.lo /run/openrc/started/net.lo
+
+# Setup the net.eth0 runlevel
+RUN ln -s /etc/init.d/net.lo /etc/init.d/net.eth0
+RUN ln -s /etc/init.d/net.eth0 /run/openrc/started/net.eth0
+
+# By default, UTC system
+RUN echo 'UTC' > /etc/timezone
+
+
+#add more stuff via bash. and or add provisoning stub back. 
+RUN ["/bin/bash"]
+CMD ["/bin/bash"]
