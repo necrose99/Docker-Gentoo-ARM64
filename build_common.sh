@@ -32,7 +32,8 @@ chmod +x ${TMPDIR}/tools/umeq-arm64
 
 #get arm64
 wget http://gentoo.osuosl.org/experimental/arm/arm64/stage3-arm64-20160324.tar.bz2
-
+proot -R </gentoo-arm64> -q umeq-arm64 bash
+uname -m
 #configure it
 build_configure_guest
 cp ${TMPDIR}/tools/umeq-arm64 ${TMPDIR}/rootfs/usr/bin/umeq-arm64
@@ -43,4 +44,6 @@ docker wait $ID
 docker commit $ID mickaelguene/arm64-debian:${VERSION}
 docker rm $ID
 docker rmi tmp_before_configuration
+proot -R </gentoo-arm64> -q umeq-arm64 bash
+uname -m
 
