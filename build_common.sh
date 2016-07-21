@@ -11,33 +11,8 @@ function cleanup() {
     rm -Rf $TMPDIR
 }
 
-function build_multistrap() {
-mkdir -p ${TMPDIR}/conf
-cat << EOF > ${TMPDIR}/conf/multistrap.conf
-[General]
-noauth=true
-unpack=true
-debootstrap=Debian
-aptsources=Debian
-
-[Debian]
-packages=apt
-source=http://ftp.debian.org/debian
-suite=${VERSION}
-EOF
-}
-
 function build_configure_guest() {
 mkdir -p ${TMPDIR}/scripts
-cat << EOF > ${TMPDIR}/scripts/configure_guest.sh
-#!/bin/bash -ex
-
-export DEBIAN_FRONTEND=noninteractive
-export DEBCONF_NONINTERACTIVE_SEEN=true
-export LC_ALL=C LANGUAGE=C LANG=C
-/var/lib/dpkg/info/dash.preinst install
-dpkg --configure -a
-EOF
 chmod +x ${TMPDIR}/scripts/configure_guest.sh
 }
 
@@ -46,7 +21,7 @@ SCRIPTDIR=`dirname $0`
 SCRIPTDIR=`(cd $SCRIPTDIR ; pwd)`
 
 #create tmp dir
-TMPDIR=`mktemp -d -t arm64_debian_docker_XXXXXXXX`
+TMPDIR=`mktemp -d -t gentoo-arm64_docker_XXXXXXXX`
 trap cleanup EXIT
 cd ${TMPDIR}
 
@@ -56,8 +31,7 @@ wget https://raw.githubusercontent.com/mickael-guene/umeq-static-build/master/bi
 chmod +x ${TMPDIR}/tools/umeq-arm64
 
 #get arm64
-build_multistrap
-/usr/sbin/multistrap -a arm64 -d rootfs -f ${TMPDIR}/conf/multistrap.conf
+wget http://gentoo.osuosl.org/experimental/arm/arm64/stage3-arm64-20160324.tar.bz2
 
 #configure it
 build_configure_guest
