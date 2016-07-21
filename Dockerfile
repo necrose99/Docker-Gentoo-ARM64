@@ -7,7 +7,7 @@ qemu-gtk \
 qemu-system-x86_64 \
 qemu-system-aarch64 \
 ### Alpine Linux as Emulation Layer, 
-MAINTAINER Necrose99 necrose99@protonmail.net
+MAINTAINER Necrose99
 
 VOLUME /gentoo-arm64/usr/portage:rw", /gentoo-arm64/usr/portage/distfiles:rw, /gentoo-arm64/usr/portage/distfiles:rw
 
