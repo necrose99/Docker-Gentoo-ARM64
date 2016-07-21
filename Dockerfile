@@ -1,4 +1,4 @@
-From mickaelguene/arm64-debian
+From gentoo/stage3-amd64
 ### debian setup as amd64-arm64 etc. Linux as Emulation Layer, 
 MAINTAINER Necrose99
 
