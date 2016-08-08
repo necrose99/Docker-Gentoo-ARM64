@@ -15,7 +15,7 @@ pre editied  /etc/resolv.conf
 ###C:  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 
 ####Umeq is an equivalent of Qemu user mode. 
 It allows you to run foreign architecture binaries on your host system. 
-For example you can <b> run arm64 binaries on x86_64 linux desktop.</b>
+For example you can <b> run arm64 binaries on x86_64 linux desktop.</b> so thus your regular AMD/Intel i7 can build for arm64 rather easily.
 
 ###D: ADD https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64
 ### E: proot startup script to initilize the chroot, a few updater/misc scripts a Self terminating clean up dockerfile/tarballs script.
