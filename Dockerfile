@@ -1,7 +1,7 @@
-From gentoo/stage3-amd64
+From scratch
 ### debian setup as amd64-arm64 etc. Linux as Emulation Layer, 
 MAINTAINER Necrose99
-
+ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/resolv.conf /etc/resolv.conf 
 VOLUME /gentoo-arm64/usr/portage:rw", /gentoo-arm64/usr/portage/distfiles:rw, /gentoo-arm64/usr/portage/distfiles:rw
 
 # This one should be present by running the build.sh script
