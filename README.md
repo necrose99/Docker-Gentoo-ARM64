@@ -20,3 +20,7 @@ For example you can <b> run arm64 binaries on x86_64 linux desktop.</b>
 ###D: ADD https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64
 ### E: proot startup script to initilize the chroot, a few updater/misc scripts a Self terminating clean up dockerfile/tarballs script.
 
+ credits @mickael-guene for the proot-static & umeq-arm64 wich make this project feasible with far less hell and frustration of other means, ie QEMU static , arm64 binformat etc. 
+ ## useage use the built in scripts for cloud or ie <b>bash# ./proot-start <b>
+###Emerge or equo i sys-apps/proot ( <i> if sabayon entropy</i> ) and qemu  or else host package manager deb/rpm etc. Debian you'll likely need multi-starp err see:
+== https://github.com/mickael-guene/umeq/ == 
