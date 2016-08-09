@@ -8,7 +8,8 @@ ADD  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 /u
 RUN ln -s /umeq-arm64 /umeq
 ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/proot-start.sh /proot-start.sh
 RUN ln -s /proot-start.sh /proot-start
-ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20160324.tar.bz2 /
+ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20160324.tar.bz2 /
+Run sleep 15s ## Add time for Root to unpack.
 docker run --rm --privileged proot-x86_64 -R / -q ./umeq-arm64 bash
 RUN mkdir {/packages,/usr/portage,/usr/portage/distfiles} && ln -s /packages /usr/portage/packages
 # less digging latter if pushing packages out of docker to Binhost. 
