@@ -11,7 +11,7 @@ VOLUME /var/lib/layman:rw, /usr/portage:rw", /usr/portage/distfiles:rw, /package
 #For example you can run arm64 binaries on x86_64 linux desktop.
 # Say hello
 RUN ./proot-start.sh
-RUN  ./proot-x86_64 -R / -q ./umeq-arm64 bash
+RUN  ./proot -R / -q ./umeq bash
 RUN echo "Bootstrapped gentoo Arm64  into /:"
 RUN unmae -a
 RUN ls --color -lah
