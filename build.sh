@@ -49,7 +49,8 @@ cd /
 
 # Say hello
 ./proot-start.sh
-echo "Bootstrapped ${stage3path} into /:"
+echo "Bootstrapped ${stage3} into /:"
+Run unmae -a
 ls --color -lah
 rmdir /usr/portage/packages && ln -s /packages /usr/portage/packages 
 # less digging latter if pushing packages out of docker to Binhost. 
