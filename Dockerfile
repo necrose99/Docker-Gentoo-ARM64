@@ -1,4 +1,6 @@
 FROM multiarch/busybox
+# FROM multiarch/qemu-user-static add to build
+docker run --rm --privileged multiarch/qemu-user-static:register
 ENV ARCH=arm64
 MAINTAINER Necrose99
 VOLUME /usr/portage:rw", /usr/portage/distfiles:rw, /packages:rw
