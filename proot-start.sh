@@ -1,12 +1,12 @@
 # proot-start.sh  ,
 # Supporting crossbuilding etc with qemu-aarch64-binfmt (qemu-aarch64-userstatic) also umeq is a micro qemu static.
 # however QEMU may yeild more stability however for cloud use ie dockerhub to build I'll invoke via script... 
-
+cwd=$(pwd)
 echo "Arm64 from AMD-64 what sorcery is this ?
 echo "fire in the hole the chroot cometh"
 ## do chroot and load static emulation binformat etc.. 
-## for ease of use 
-proot -R /opt/gentoo-arm64/ -q ./umeq-arm64 bash
+#./$cwd/proot -R $cwd/ -q  ./umeq-arm64 bash
+proot -R / -q ./umeq-arm64 bash
 #
 #type in "uname -m" or unmae -a 
 sorcery () {
