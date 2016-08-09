@@ -1,12 +1,3 @@
-# First param is package tarball, 2nd is the *.DIGEST file
- VerifyShaOfStage3()
-{	if [[ "$test_sum" == "$calculated_sum" ]]; then
-		return 0
-	else
-		return 1
-	fi
-}
-
 $stage3="http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20160324.tar.bz2"
 $portage="http://distfiles.gentoo.org/releases/snapshots/current/portage-20160731.tar.bz2 "
 
@@ -16,7 +7,7 @@ mkdir {/newWorldOrder,/box,/newWorldOrder/packages,/newWorldOrder/usr/portage,/n
 sed -e 's/#rc_sys=""/rc_sys="lxc"/g' -i /newWorldOrder/etc/rc.conf
 # By default, UTC system
 echo 'UTC' > /newWorldOrder/etc/timezone
-cp /bin/busybox . && cp /bin/busybox /box # may need busybox to call in chroot./PROOT 
+cp /bin/busybox . && cp -r / /box # may need busybox to call in chroot./PROOT 
 wget  https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/proot-start.sh -O /newWorldOrder/proot-start.sh
 wget https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 -O /newWorldOrder/proot-x86_64
 wget  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 -O /newWorldOrder/umeq-arm64
