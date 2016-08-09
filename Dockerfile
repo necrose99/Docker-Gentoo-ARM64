@@ -5,7 +5,7 @@ ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/proot
 ADD https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 /proot-x86_64
 ADD  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 /umeq-arm64
 ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20160324.tar.bz2 /
-RUN  --privileged ./proot-x86_64 -R / -q ./umeq-arm64 bash
+RUN  ./proot-x86_64 -R / -q ./umeq-arm64 bash
 
 VOLUME /usr/portage:rw", /usr/portage/distfiles:rw, /packages:rw
 RUN ln -s /proot-start.sh /proot-start
@@ -20,5 +20,6 @@ ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build
 #For example you can run arm64 binaries on x86_64 linux desktop.
 ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/tidyup.sh
 RUN ./tidyup.sh ## Cleaning tarballs out and tidyup.sh
+Run unmae -a
 
 
