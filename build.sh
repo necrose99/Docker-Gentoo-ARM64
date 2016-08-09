@@ -9,9 +9,9 @@ sed -e 's/#rc_sys=""/rc_sys="lxc"/g' -i /newWorldOrder/etc/rc.conf
 echo 'UTC' > /newWorldOrder/etc/timezone
 cp /bin/busybox . && cp -r / /box # may need busybox to call in chroot./PROOT 
 wget  https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/proot-start.sh -O /newWorldOrder/proot-start.sh
-wget https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 -O /newWorldOrder/proot-x86_64
-wget  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 -O /newWorldOrder/umeq-arm64
-chmod +x {/newWorldOrder/proot-start.sh, /newWorldOrder/umeq-arm64, /newWorldOrder/proot-x86_64}
+wget https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 -O /newWorldOrder/proot
+wget  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 -O /newWorldOrder/umeq
+chmod +x {/newWorldOrder/proot-start.sh, /newWorldOrder/umeq, /newWorldOrder/proot}
 https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/resolv.conf -O/newWorldOrder/etc/resolv.conf
 #IPv4 and ipv6 googledns setup 
 
@@ -42,5 +42,4 @@ rmdir /usr/portage/packages && ln -s /packages /usr/portage/packages
 # less digging latter if pushing packages out of docker to Binhost. 
 #make easy 4 laterz with lazy sym-links.
 ln -s /proot-start.sh /proot-start 
-ln -s /umeq-arm64 /umeq  
-ln -s /proot-x86_64 /proot
+
