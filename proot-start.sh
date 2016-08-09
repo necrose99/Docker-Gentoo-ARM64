@@ -5,7 +5,7 @@ cwd=$(pwd)
 echo "Arm64 from AMD-64 what sorcery is this ?
 echo "fire in the hole the chroot cometh"
 ## do chroot and load static emulation binformat etc.. 
-#./$cwd/proot -R $cwd/ -q  ./umeq-arm64 bash
+#./$cwd/proot -R $cwd/ -q  ./umeq bash
 proot -R / -q ./umeq-arm64 bash
 #
 #type in "uname -m" or unmae -a 
