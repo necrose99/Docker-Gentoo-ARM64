@@ -1,7 +1,7 @@
 FROM busybox
 MAINTAINER Necrose99
 VOLUME /usr/portage:rw", /usr/portage/distfiles:rw, /packages:rw
-ADD build.sh /
+ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build.sh /
 RUN /build.sh
 ENV ARCH=arm64
 RUN  ./proot-x86_64 -R / -q ./umeq-arm64 bash
