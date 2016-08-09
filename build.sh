@@ -17,15 +17,10 @@ https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/res
 
 echo "Downloading and extracting ${stage3}.${portage}."
 wget -q -c "${stage3}" "${portage}"
-if VerifyShaOfStage3 $stage3 "${stage3}.DIGESTS"; then
-	echo "DIGEST sum is okey";
-else
-	echo "DIGEST sum is NOT okey";
-	return 1;
-fi
+
 bunzip2 -c ${stage3} | tar --exclude "./etc/hosts" --exclude "./sys/*" -xf -
 bunzip2 -c ${portage} | tar --exclude "packages"  -xf -> /usr/portage
-/newWorldOrder/busybox rm -f $stage3
+/newWorldOrder/busybox rm -f $stage3 $portage
 
 
 echo "Installing stage 3"
