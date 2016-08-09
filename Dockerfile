@@ -5,7 +5,7 @@ ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/proot
 ADD https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 /proot-x86_64
 ADD  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 /umeq-arm64
 ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20160324.tar.bz2 /
-docker run --rm --privileged proot-x86_64 -R / -q ./umeq-arm64 bash
+RUN  --privileged ./proot-x86_64 -R / -q ./umeq-arm64 bash
 
 VOLUME /usr/portage:rw", /usr/portage/distfiles:rw, /packages:rw
 RUN ln -s /proot-start.sh /proot-start
