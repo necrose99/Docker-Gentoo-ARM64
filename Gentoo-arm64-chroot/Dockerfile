@@ -2,10 +2,16 @@ From gentoo/stage3-amd64
 MAINTAINER Necrose99
 ENV ARCH=arm64
 VOLUME /var/lib/layman:rw, /usr/portage:rw", /usr/portage/distfiles:rw, /chroot/packages:rw, /:rw 
-VOLUME /chroot:rw /var/lib/entropy/client/packages:rw /chroot/var/lib/entropy/client/packages:rw
+VOLUME /chroot:rw /var/lib/entropy/client/packages:rw /chroot/var/lib/entropy/client/packages:rw 
+## Fuck Layman with fire least for now... its a royal pain in the ass to build in docker sometimes , this give repos faster.
+## although layman is preferable. however as stale as gentoo's arm64 stage image is eassier is better... 
+VOLUME /etc/portage/repos.conf:rw /chroot/etc/portage/repos.conf:rw /chroot/usr/overlays/:rw /var/lib/layman:rw /chroot//var/lib/layman:rw
+## let portage pull them down...
 ADD https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 /
-ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/Gentoo-arm64-chroot/build.sh /
-RUN ./build.sh
+## add binformat to host and to chroot area 
+ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /etc/binfmt.d
+ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /chroot/etc/binfmt.d
+
 ADD https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 /proot
 ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20160324.tar.bz2 /chroot/
 ADD https://github.com/necrose99/Arm64-Linux-prep/blob/master/prep.zip /chroot/
