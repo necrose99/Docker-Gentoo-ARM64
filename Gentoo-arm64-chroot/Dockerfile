@@ -23,8 +23,8 @@ ENV HOME /root
 # fire up the chroot
 ENTRYPOINT ["./proot -R /chroot/ -q ./umeq-arm64 /chroot/bin/bash"]
 
-# Setup the rc_sys
-RUN  sed -e 's/#rc_sys=""/rc_sys="lxc"/g' -i /chroot/etc/rc.conf
+# Setup the rc_sys , alredy done in gentoo official image , clone into chroot.
+RUN  cp /etc/rc.conf/ chroot/etc/rc.conf
 
 
 
