@@ -20,8 +20,6 @@ ENTRYPOINT ["./proot -R / -q ./umeq-arm64 /bin/bash"]
 #ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build.sh /build.sh
 #RUN /build.sh
 #
-
-
-ADD https://raw.githubusercontent.com/Sabayon/docker-builder-amd64/master/script/depcheck /chroot/usr/local/bin/depcheck
+# ADD https://raw.githubusercontent.com/Sabayon/docker-builder-amd64/master/script/depcheck /chroot/usr/local/bin/depcheck
 
 
