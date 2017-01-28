@@ -3,7 +3,7 @@ MAINTAINER Necrose99
 ENV ARCH=arm64
 VOLUME /var/lib/layman:rw, /usr/portage:rw", /usr/portage/distfiles:rw, /packages:rw, /:rw
 VOLUME /var/lib/entropy/client/packages:rw
-ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20160324.tar.bz2 /
+ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20161219.tar.bz2 /
 # ADD https://github.com/proot-me/proot-static-build /proot
 ADD https://github.com/necrose99/Arm64-Linux-prep/blob/master/prep.zip /
 ## add more tools before the pre-op Linux virtual OS crashes off and wont have emulation. 
