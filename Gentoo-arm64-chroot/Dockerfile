@@ -13,7 +13,7 @@ ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build
 ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /chroot/etc/binfmt.d
 
 ADD https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 /proot
-ADDhttp://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20161219.tar.bz2  /chroot/
+ADD http://gentoo.osuosl.org/experimental/arm64/stage3-arm64-20161219.tar.bz2  /chroot/
 ADD https://github.com/necrose99/Arm64-Linux-prep/blob/master/prep.zip /chroot/
 ADD https://raw.githubusercontent.com/Sabayon/docker-builder-amd64/master/script/depcheck /chroot/usr/local/bin/depcheck
 #Add portage -into chroot.
