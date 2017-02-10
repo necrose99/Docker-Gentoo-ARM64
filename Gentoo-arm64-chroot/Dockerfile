@@ -9,8 +9,8 @@ VOLUME /etc/portage/repos.conf:rw /chroot/etc/portage/repos.conf:rw /chroot/usr/
 ## let portage pull them down...
 ADD https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 /
 ## add binformat to host and to chroot area 
-ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /etc/binfmt.d
-ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /chroot/etc/binfmt.d
+ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /etc/binfmt.d/qemu-arm64.conf
+ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /chroot/etc/binfmt.d/qemu-arm64.conf
 
 ADD https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 /proot
 ADD http://gentoo.osuosl.org/experimental/arm64/stage3-arm64-20161219.tar.bz2  /chroot/
