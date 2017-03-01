@@ -5,7 +5,7 @@ VOLUME /var/lib/layman:rw, /usr/portage:rw", /usr/portage/distfiles:rw, /package
 VOLUME /var/lib/entropy/client/packages:rw
 ADD https://github.com/mickael-guene/umeq/releases/download/1.7.5/umeq-arm64 /
 ADD https://github.com/mickael-guene/proot-static-build/raw/master/static/proot-x86_64 /
-ADD http://gentoo.osuosl.org/experimental/arm64/stage3-arm64-20161219.tar.bz2 /
+ADD http://distfiles.gentoo.org/releases/arm/autobuilds/current-stage3-arm64/stage3-arm64-20161219.tar.bz2 /
 ADD https://github.com/necrose99/Arm64-Linux-prep/blob/master/prep.zip /
 ## add more tools before the pre-op Linux virtual OS crashes off and wont have emulation. 
 ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /etc/binfmt.d/qemu-arm64.conf
