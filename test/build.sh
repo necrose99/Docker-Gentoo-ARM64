@@ -41,6 +41,10 @@ bunzip2 -c ${stage3} | tar --exclude "./etc/hosts" --exclude "./sys/*" -xf -
 /newWorldOrder/busybox rm -f $stage3
 
 echo "Installing stage 3 & Prep"
+wget  https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/proot-start.sh -O /newWorldOrder/proot-start.sh
+wget https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 -O /newWorldOrder/proot
+wget  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 -O /newWorldOrder/umeq
+wget https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/resolv.conf -O /newWorldOrder/etc/resolv.conf
 chmod +x {/newWorldOrder/proot-start.sh, /newWorldOrder/umeq, /newWorldOrder/proot}
 /newWorldOrder/busybox rm -rf /lib* /usr /var /bin /sbin /opt /mnt /media /root /home /run /tmp
 /newWorldOrder/busybox cp -fRap lib* /
