@@ -10,8 +10,11 @@ VerifyShaOfStage3()
 	fi
 }
 
-suffix=$3 # e.g. -hardened
-arch=$1
+#suffix=$3 # e.g. -hardened ### arm64
+# arch=$1
+## Force ARCH to ARM64 Stage3 
+suffix=arm64
+arch=arm
 # http://distfiles.gentoo.org/releases/arm/autobuilds/latest-stage3-arm64.txt
 # may require some manual hackage. 
 dist="http://distfiles.gentoo.org/releases/${arch}/autobuilds/"
@@ -37,7 +40,8 @@ fi
 bunzip2 -c ${stage3} | tar --exclude "./etc/hosts" --exclude "./sys/*" -xf -
 /newWorldOrder/busybox rm -f $stage3
 
-echo "Installing stage 3"
+echo "Installing stage 3 & Prep"
+chmod +x {/newWorldOrder/proot-start.sh, /newWorldOrder/umeq, /newWorldOrder/proot}
 /newWorldOrder/busybox rm -rf /lib* /usr /var /bin /sbin /opt /mnt /media /root /home /run /tmp
 /newWorldOrder/busybox cp -fRap lib* /
 /newWorldOrder/busybox cp -fRap bin boot home media mnt opt root run sbin tmp usr var /
