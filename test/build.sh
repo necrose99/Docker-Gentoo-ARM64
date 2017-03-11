@@ -41,6 +41,11 @@ bunzip2 -c ${stage3} | tar --exclude "./etc/hosts" --exclude "./sys/*" -xf -
 /newWorldOrder/busybox rm -f $stage3
 
 echo "Installing stage 3 & Prep"
+# Setup the rc_sys , moved from dockerfile , since going to have to wrap via emulator... less likely to fail... 
+sed -e 's/#rc_sys=""/rc_sys="docker"/g' -i /newWorldOrder/etc/rc.conf
+# By default, UTC system
+echo 'UTC' > /newWorldOrder/etc/timezone
+
 wget  https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/proot-start.sh -O /newWorldOrder/proot-start.sh
 wget https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 -O /newWorldOrder/proot
 wget  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 -O /newWorldOrder/umeq
