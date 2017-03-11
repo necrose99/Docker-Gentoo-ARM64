@@ -7,6 +7,8 @@ MAINTAINER Necrose99
 
 # This one should be present by running the build.sh script
 ADD build.sh /
+## add a portage snapshot ... 
+ADD http://distfiles.gentoo.org/releases/snapshots/current/portage-latest.tar.bz2 /newWorldOrder/usr/portage/
 
 RUN /build.sh arm arm64
 
