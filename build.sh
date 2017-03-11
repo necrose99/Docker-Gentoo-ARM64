@@ -12,7 +12,7 @@ wget  https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/pro
 wget https://raw.githubusercontent.com/mickael-guene/proot-static-build/master-umeq/static/proot-x86_64 -O /newWorldOrder/proot
 wget  https://github.com/mickael-guene/umeq/releases/download/1.7.4/umeq-arm64 -O /newWorldOrder/umeq
 chmod +x {/newWorldOrder/proot-start.sh, /newWorldOrder/umeq, /newWorldOrder/proot}
-https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/resolv.conf -O/newWorldOrder/etc/resolv.conf
+wget https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/resolv.conf -O /newWorldOrder/etc/resolv.conf
 #IPv4 and ipv6 googledns setup 
 
 echo "Downloading and extracting ${stage3}.${portage}."
