@@ -1,4 +1,5 @@
 FROM busybox
+ENV ARCH=AMD64
 
 #http://distfiles.gentoo.org/releases/arm/autobuilds/latest-stage3-arm64.txt
 
@@ -10,13 +11,14 @@ ADD build.sh /
 ## add a portage snapshot ... 
 ADD http://distfiles.gentoo.org/releases/snapshots/current/portage-latest.tar.bz2 /newWorldOrder/usr/portage/
 
-RUN /build.sh arm arm64
+#RUN /build.sh arm arm64
+# rigged build.sh hopefully 
+RUN /build.sh # arm arm64
 
-# Setup the rc_sys
-RUN sed -e 's/#rc_sys=""/rc_sys="docker"/g' -i /etc/rc.conf
-
-# By default, UTC system
-RUN echo 'UTC' > /etc/timezone
+ENV ARCH=ARM64
+VOLUME /var/lib/layman:rw, /usr/portage:rw", /usr/portage/distfiles:rw, /packages:rw, /:rw
+VOLUME /var/lib/entropy/client/packages:rw
+## moved into build.sh 
 
 
 
