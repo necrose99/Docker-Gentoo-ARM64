@@ -3,6 +3,7 @@ MAINTAINER Necrose99
 ENV ARCH=arm64
 VOLUME /var/lib/layman:rw, /usr/portage:rw", /usr/portage/distfiles:rw, /packages:rw, /:rw
 VOLUME /var/lib/entropy/client/packages:rw
+ADD https://github.com/multiarch/qemu-user-static/releases/download/v2.8.1/x86_64_qemu-aarch64-static.tar.gz /qemu-static
 ADD https://github.com/mickael-guene/umeq/releases/download/1.7.5/umeq-arm64 /
 ADD https://github.com/mickael-guene/proot-static-build/raw/master/static/proot-x86_64 /
 ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-arm64-20170223.tar.bz2 /
