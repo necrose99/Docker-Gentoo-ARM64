@@ -1,0 +1,6 @@
+[sabayon-distro]
+#/etc/portage/repos.conf/sabayon-distro.conf
+location = /var/lib/layman/sabayon-distro
+sync-type = git
+sync-uri = https://github.com/Sabayon/sabayon-distro/master.git
+auto-sync = true
