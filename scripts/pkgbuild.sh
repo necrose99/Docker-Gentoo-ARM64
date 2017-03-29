@@ -57,6 +57,7 @@ sys-fs/cachefilesd
 	dev-lang/python 
 	sys-fs/squashfs-tools 
 	app-arch/p7zip
+	app-admin/python-updater
 )
 
 dev-vcs=(
