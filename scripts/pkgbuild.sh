@@ -58,6 +58,9 @@ sys-fs/cachefilesd
 	sys-fs/squashfs-tools 
 	app-arch/p7zip
 	app-admin/python-updater
+	## allow easy fetching of package from docker if wanted. webmin also for ease. 
+	www-servers/lighttpd
+	app-admin/webmin
 )
 
 dev-vcs=(
