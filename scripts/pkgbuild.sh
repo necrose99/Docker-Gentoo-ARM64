@@ -1,7 +1,8 @@
 # build packages
-emerge  --buildpkg ${dev-vcs} ${buildme} ${sabayon-build} ${boot}
+## Its not all that much but should be Enough to get a working basic ISO
+emerge  --buildpkg ${dev-vcs} ${buildme} ${sabayon-build} ${boot} ${x11}
 # Wrap packages
-equo pkg quickpkg  ${dev-vcs} ${buildme} ${sabayon-build} ${boot} */* 
+equo pkg quickpkg  ${dev-vcs} ${buildme} ${sabayon-build} ${boot} */* xfce-base/*
 # package any system atoms also */* 
 
 boot=(
@@ -82,6 +83,15 @@ sabayon-build=(
 	app-misc/sabayon-live
     app-misc/sabayon-skel
 	app-misc/sabayon-devkit
+	app-admin/anaconda
 	 )
 
+## Arm64 add Nvidia stock 10XX Geforce compact ... 
+dev-vcs=(
 xfce-base/xfce4-meta
+dev-util/nvidia-cuda-sdk
+dev-util/nvidia-cuda-toolkit
+media-gfx/nvidia-cg-toolkit
+x11-drivers/nvidia-drivers
+x11-misc/lightdm
+)
