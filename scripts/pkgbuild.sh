@@ -51,6 +51,10 @@ sys-fs/cachefilesd
 	dev-util/catalyst
 	dev-util/catalyst
 	app-portage/gpytage
+	=dev-lang/python-2.7  
+	dev-lang/python 
+	sys-fs/squashfs-tools 
+	app-arch/p7zip
 )
 
 dev-vcs=(
