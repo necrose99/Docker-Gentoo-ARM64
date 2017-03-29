@@ -66,6 +66,13 @@ dev-vcs/cvs
 dev-vcs/darcs
 dev-vcs/mercurial
 dev-vcs/subversion
+## move and recat latter. 
+dev-lang/go
+dev-util/cargo
+www-client/google-chrome
+www-client/firefox
+=sys-devel/gcc-4.9.3
+=sys-devel/gcc-4.8.4
 )
 ## app-portage/g-sorcery would be nice to have but of late its busted. but well try anyhowz..
 
