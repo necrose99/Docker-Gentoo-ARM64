@@ -73,6 +73,20 @@ www-client/google-chrome
 www-client/firefox
 =sys-devel/gcc-4.9.3
 =sys-devel/gcc-4.8.4
+sys-devel/automake
+sys-devel/autoconf
+dev-lang/rust
+################# devops mays well remo'control this
+app-admin/puppet-agent
+dev-ruby/semantic_puppet
+app-admin/salt
+app-admin/ansible
+dev-python/pychef
+dev-util/drone
+dev-util/drone-ui
+dev-util/jenkins-bin
+
+
 )
 ## app-portage/g-sorcery would be nice to have but of late its busted. but well try anyhowz..
 
