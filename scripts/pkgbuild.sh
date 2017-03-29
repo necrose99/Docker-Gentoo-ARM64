@@ -85,7 +85,10 @@ dev-python/pychef
 dev-util/drone
 dev-util/drone-ui
 dev-util/jenkins-bin
-
+dev-python/jenkins-autojobs
+dev-python/jenkins-webapi
+dev-python/jenkinsapi
+net-libs/nodejs
 
 )
 ## app-portage/g-sorcery would be nice to have but of late its busted. but well try anyhowz..
