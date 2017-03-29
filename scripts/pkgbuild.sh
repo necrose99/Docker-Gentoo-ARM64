@@ -1,7 +1,8 @@
 # build packages
 emerge  --buildpkg ${dev-vcs} ${buildme} ${sabayon-build} ${boot}
 # Wrap packages
-equo smart quickpkg  ${dev-vcs} ${buildme} ${sabayon-build} ${boot}
+equo pkg quickpkg  ${dev-vcs} ${buildme} ${sabayon-build} ${boot} */* 
+# package any system atoms also */* 
 
 boot=(
 sys-boot/gnu-efi
