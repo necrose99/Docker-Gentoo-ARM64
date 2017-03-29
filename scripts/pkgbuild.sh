@@ -5,6 +5,7 @@ emerge  --buildpkg ${dev-vcs} ${buildme} ${sabayon-build} ${boot} ${x11}
 equo pkg quickpkg  ${dev-vcs} ${buildme} ${sabayon-build} ${boot} */* xfce-base/*
 # package any system atoms also */* 
 
+#### Cavium servers can use UEFI/EFI. 
 boot=(
 sys-boot/gnu-efi
 sys-libs/efivar
