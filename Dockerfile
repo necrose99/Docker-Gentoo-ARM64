@@ -18,13 +18,11 @@ ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-arm64-20170223.t
 ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /etc/binfmt.d/qemu-arm64.conf
 ENTRYPOINT ["./qemu-static-arm64", "-execve", "-0", "bash", "/bin/bash"]
 #Add portage 
+RUN wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2 /
 
-
-# RUN wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2 /
-
-#RUN mkdir -p /usr/portage/distfiles /usr/portage/metadata /usr/portage/packages 
-#RUN bunzip2 -c  /portage-latest.tar.bz2 | tar -xf - -C /usr 
-#RUN rm /portage-latest.tar.bz2
+RUN mkdir -p /usr/portage/distfiles /usr/portage/metadata /usr/portage/packages 
+RUN bunzip2 -c  /portage-latest.tar.bz2 | tar -xf - -C /usr 
+RUN rm /portage-latest.tar.bz2
 
 # Set locales to en_US.UTF-8
 #ENV LC_ALL=en_US.UTF-8
