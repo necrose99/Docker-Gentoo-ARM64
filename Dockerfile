@@ -7,7 +7,7 @@ VOLUME /var/lib/entropy/client/packages:rw
 ADD https://busybox.net/downloads/binaries/1.26.2-defconfig-multiarch/busybox-x86_64 /busybox/busybox-x86_64
 ### 
 ## Add emulation tools.
-ADD https://github.com/multiarch/qemu-user-static/releases/download/v2.8.1/x86_64_qemu-aarch64-static.tar.gz /qemu-static
+ADD https://github.com/multiarch/qemu-user-static/releases/download/v2.9.1/qemu-aarch64-static.tar.gz /qemu-static-arm64
 ADD https://github.com/mickael-guene/umeq/releases/download/1.7.5/umeq-arm64 /
 ADD https://github.com/mickael-guene/proot-static-build/raw/master/static/proot-x86_64 /
 ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-arm64-20170223.tar.bz2 /
@@ -16,7 +16,7 @@ ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-arm64-20170223.t
 # ADD https://github.com/necrose99/Arm64-Linux-prep/blob/master/prep.zip /
 ## add more tools before the pre-op Linux virtual OS crashes off and wont have emulation. 
 ADD https://raw.githubusercontent.com/necrose99/Docker-Gentoo-ARM64/master/build/qemu-arm64.conf /etc/binfmt.d/qemu-arm64.conf
-# ENTRYPOINT ["./umeq-arm64", "-execve", "-0", "bash", "/bin/bash"]
+ENTRYPOINT ["./qemu-static-arm64", "-execve", "-0", "bash", "/bin/bash"]
 #Add portage 
 
 
