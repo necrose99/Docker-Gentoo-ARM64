@@ -10,7 +10,7 @@ ADD https://busybox.net/downloads/binaries/1.26.2-defconfig-multiarch/busybox-x8
 ADD https://github.com/multiarch/qemu-user-static/releases/download/v2.9.1/qemu-aarch64-static.tar.gz /qemu-static-arm64
 ADD https://github.com/mickael-guene/umeq/releases/download/1.7.5/umeq-arm64 /
 ADD https://github.com/mickael-guene/proot-static-build/raw/master/static/proot-x86_64 /
-ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-arm64-20170223.tar.bz2 /
+ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20180305.tar.bz2 /
 # ADD http://distfiles.gentoo.org/releases/arm/autobuilds/current-stage3-arm64/stage3-arm64-20161219.tar.bz2 /
 ## curent stable.. 
 # ADD https://github.com/necrose99/Arm64-Linux-prep/blob/master/prep.zip /
