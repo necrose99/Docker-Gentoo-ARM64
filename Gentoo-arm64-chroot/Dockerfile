@@ -5,7 +5,8 @@ ENV ARCH=arm64
 ## prep Gentoo /Sabayon volume spaces... 
 # Define standard volumes
 VOLUME ["/usr/portage", "/usr/portage/distfiles", "/usr/portage/packages", "/var/lib/entropy/client/packages"]
-VOLUME ["/var/db/repos/", "var/lib/layman", "]
+## overlay spaces...
+VOLUME ["/var/db/repos/", "var/lib/layman", "/usr/local/portage/"]
 
 ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20180711.tar.bz2 /chroot/
 
@@ -18,7 +19,7 @@ ENV LC_ALL=en_US.UTF-8
 # Set environment variables.
 ENV HOME /root
 # fire up the chroot
-WORKDIR /chroot
+WORKDIR /chroot/
 ENTRYPOINT ["/chroot/bin/bash"]
 
 # Setup the rc_sys , alredy done in gentoo official image , clone into chroot.
