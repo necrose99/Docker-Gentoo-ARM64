@@ -1,4 +1,4 @@
-FROM scratch
+LoFROM scratch
 MAINTAINER Necrose99
 ENV ARCH=arm64
 
@@ -9,7 +9,13 @@ VOLUME ["/usr/portage", "/usr/portage/distfiles", "/usr/portage/packages", "/var
 VOLUME ["/var/db/repos/", "var/lib/layman", "/usr/local/portage/"]
 
 ## add binformat to host and to chroot area 
-ADD http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20180711.tar.bz2 /
+ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20190613.tar.bz2 /
+# systemd spec.
+#ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-systemd-20190428.tar.bz2 /
+# stage4-arm64-minimal-20190613.tar.bz2
+
+
+
 # Set locales to en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 # Set environment variables.
