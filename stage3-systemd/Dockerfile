@@ -12,10 +12,12 @@ VOLUME ["/var/db/repos/", "var/lib/layman", "/var/db/repos/gentoo/" "/var/cache/
 #ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20190613.tar.bz2 /
 # systemd spec.
 ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-systemd-20190925.tar.bz2 /
-## add portge
-ADD http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz /var/db/repos/gentoo/
 # stage4-arm64-minimal-20190613.tar.bz2
 # http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-systemd-20190925.tar.bz2 
+
+## add portge ebuilds to newer dir. 
+ADD http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz /var/db/repos/gentoo/
+
 
 
 # Set locales to en_US.UTF-8
