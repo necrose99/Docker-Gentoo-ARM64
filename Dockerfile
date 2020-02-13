@@ -1,4 +1,4 @@
-LoFROM scratch
+FROM scratch
 MAINTAINER Necrose99
 ENV ARCH=arm64
 
