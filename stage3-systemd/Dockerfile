@@ -11,10 +11,11 @@ VOLUME ["/var/db/repos/", "var/lib/layman", "/var/db/repos/gentoo/" "/var/cache/
 ## add binformat to host and to chroot area 
 #ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20190613.tar.bz2 /
 # systemd spec.
-ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-20191124.tar.bz2 /
+ADD  http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-systemd-20190925.tar.bz2 /
 ## add portge
 ADD http://distfiles.gentoo.org/snapshots/portage-latest.tar.xz /var/db/repos/gentoo/
 # stage4-arm64-minimal-20190613.tar.bz2
+# http://distfiles.gentoo.org/experimental/arm64/stage3-arm64-systemd-20190925.tar.bz2 
 
 
 # Set locales to en_US.UTF-8
