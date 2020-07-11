@@ -10,6 +10,8 @@ VOLUME ["/var/db/repos/", "var/lib/layman", "/var/db/repos/gentoo/" "/var/cache/
 
 ## add binformat to host and to chroot area 
 ADD https://build.funtoo.org/1.4-release-std/arm-64bit/arm64_generic/2020-07-06/stage3-arm64_generic-1.4-release-std-2020-07-06.tar.xz
+ADD https://github.com/multiarch/qemu-user-static/releases/download/v5.0.0-2/x86_64_qemu-aarch64-static.tar.gz  /usr/bin/qemu-aarch64-static
+ADD https://github.com/balena-io-library/armv7hf-debian-qemu/archive/master.zip / 
 
 
 
