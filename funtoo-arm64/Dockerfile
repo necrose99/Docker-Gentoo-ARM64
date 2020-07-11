@@ -12,7 +12,8 @@ VOLUME ["/var/db/repos/", "var/lib/layman", "/var/db/repos/gentoo/" "/var/cache/
 ADD https://build.funtoo.org/1.4-release-std/arm-64bit/arm64_generic/2020-07-06/stage3-arm64_generic-1.4-release-std-2020-07-06.tar.xz
 ADD https://github.com/multiarch/qemu-user-static/releases/download/v5.0.0-2/x86_64_qemu-aarch64-static.tar.gz  /usr/bin/qemu-aarch64-static
 ADD https://github.com/balena-io-library/armv7hf-debian-qemu/archive/master.zip / 
-
+#Overwite resin-xbuild with native arm64 if amr32 not in kernel likely ship sinks.. 
+ADD https://github.com/necrose99/Docker-Gentoo-ARM64/raw/master/tools/resin-xbuild-arm64.zip /bin/
 
 
 # Set locales to en_US.UTF-8
